@@ -160,20 +160,6 @@ jobs:
           platform: openjsse
           testjdk: -Dtest.java.home=/usr/lib/jvm/java-8-openjdk-amd64
 
-  testjdk11:
-    docker:
-      - image: circleci/openjdk:11.0.5-jdk-stretch
-
-    environment:
-      JVM_OPTS: -Xmx1g
-      TERM: dumb
-
-    steps:
-      - checkout
-
-      - runtests:
-          platform: jdk9
-
   testjdk13:
     docker:
       - image: circleci/openjdk:13.0.1-jdk-buster
