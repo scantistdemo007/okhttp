@@ -225,11 +225,6 @@ workflows:
           filters:
             branches:
               only: master
-      - testjdk11:
-          filters:
-            branches:
-              ignore:
-                - gh-pages
       - testjdk13:
           filters:
             branches:
@@ -257,9 +252,6 @@ workflows:
           requires:
             - compile
       - testopenjsse:
-          requires:
-            - compile
-      - testjdk11:
           requires:
             - compile
       - testjdk13:
